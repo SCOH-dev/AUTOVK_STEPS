@@ -24,9 +24,8 @@
 https://oauth.vk.com/token?grant_type=password&client_id=2274003&client_secret=hHbZxrka2uZ6jB1inYsH&username=ЛОГИН&password=ПАРОЛЬ
 Если у вас включена двухфакторка, то нужно будет перейти по ссылке, которая указана в "redirect_uri" и ввести там код 2FA.
 Токен будет находиться между "access_token=" и "&user_id="
-<p>
-    <font color="red">Как получить токен Telegram-бота:</font>
-</p>
+
+=== Как получить токен Telegram-бота: ===
 
 <div align="center">
   <br />
