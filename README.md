@@ -19,9 +19,13 @@
 
 
 Как получить токен ВКонтакте аккаунта:
-...
 
-Как получить токен Telegram-бота:
+Для этого нужно подставить в ссылку ниже свой логин и пароль и перейти по ней:
+# https://oauth.vk.com/token?grant_type=password&client_id=2274003&client_secret=hHbZxrka2uZ6jB1inYsH&username=ЛОГИН&password=ПАРОЛЬ
+# Если у вас включена двухфакторка, то нужно будет перейти по ссылке, которая указана в "redirect_uri" и ввести там код 2FA.
+# Токен будет находиться между "access_token=" и "&user_id="
+
+<font color="red">Как получить токен Telegram-бота:</font>
 
 <div align="center">
   <br />
@@ -30,8 +34,7 @@
   </p>
 </div>
 ...
-![Логотип](https://example.com/logo.png)
-
+После получения всех нужных данных, вы должны заполнить файл ".env" и у вас должно получиться примерно так:
 ```dotenv
 # Пример конфигурации
 TOKEN=7523522454:AAG2i3fEwJgkjum0UrrFxxOvcrwGuFgY3uEos
