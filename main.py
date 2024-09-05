@@ -83,20 +83,23 @@ async def start(message: types.Message):
 
 @dp.message(Command("mounth_steps"))
 async def set_month_steps(message: types.Message):
-    with requests.Session() as sess:
-        sess.headers.update({'Authorization': 'Bearer ' + VK_TOKEN})
-        sess.params = {'v': 5.131}
+    if int(message.chat.id) == int(Chat_id):
+        with requests.Session() as sess:
+            sess.headers.update({'Authorization': 'Bearer ' + VK_TOKEN})
+            sess.params = {'v': 5.131}
 
-        end_date = date.today()
-        start_date = date.today() - timedelta(days=31)
+            end_date = date.today()
+            start_date = date.today() - timedelta(days=31)
 
-        current_date = start_date
-        while current_date <= end_date:
-            response = set_steps(sess, current_date.strftime('%Y-%m-%d'), 80000, 50000)
-            await message.answer(f"{current_date.strftime('%Y-%m-%d')}: {response}")
-            if 'response' in response:
-                current_date += timedelta(days=1)
-            await asyncio.sleep(0.05)
+            current_date = start_date
+            while current_date <= end_date:
+                response = set_steps(sess, current_date.strftime('%Y-%m-%d'), 80000, 50000)
+                await message.answer(f"{current_date.strftime('%Y-%m-%d')}: {response}")
+                if 'response' in response:
+                    current_date += timedelta(days=1)
+                await asyncio.sleep(0.05)
+    else:
+        await message.answer(f"У вас нет доступа к использованию этого бота\nВаш ID: {message.chat.id}")
 
 
 if __name__ == "__main__":
