@@ -6,22 +6,22 @@
 </div>
 
 # AutoVk_steps
-Это *программа*, разработанная мной для **автоматической** ежедневной **выдачи шагов** в заданное **время** с неким управлением через Telegram-бота. Также доступна функция **добавления шагов на срок до 31 дня** *от текущей даты.*
+Это *программа*, разработанная мной для **автоматической** ежедневной **выдачи шагов** в заданное **время** с управлением через Telegram-бота. Также доступна функция **добавления шагов на срок до 31 дня** *от текущей даты.*
 
 ## Для ежедневной выдачи шагов требуется хостинг, панель или сервер, куда можно загрузить код.
 
 ### Инструкция по эксплуатации:
 Первоначальную настройку нужно выполнить в файле "[.env](https://github.com/SCOH-dev/AUTOVK_STEPS/blob/main/.env)", где необходимо указать:
 
-- Токен ВКонтакте
+- Токен ВКонтакте (Можно указать позже в боте при помощи команды '/set_token')
 - Токен Telegram-бота
 - айди пользователя
-- Время загрузки шагов
+- Время загрузки шагов (Можно изменить в боте при помощи команды '/set_time')
 
 
 <h3 style="color: red;">Как получить токен ВКонтакте аккаунта: </h3>
 
-Для этого нужно подставить в ссылку ниже свой логин и пароль и перейти по ней:
+Для этого нужно подставить в ссылку ниже свой логин и парольэ и перейти по ней:
 https://oauth.vk.com/token?grant_type=password&client_id=2274003&client_secret=hHbZxrka2uZ6jB1inYsH&username=ЛОГИН&password=ПАРОЛЬ
 <h6 style="color: yellow;">После всех действий берем ссылку и копируем ее, токен будет находиться между "access_token=" и "&user_id="</h6>
 
@@ -45,7 +45,7 @@ https://oauth.vk.com/token?grant_type=password&client_id=2274003&client_secret=h
 ```dotenv
 # Пример конфигурации
 TOKEN=7523522454:AAG2i3fEwJgkjum0UrrFxxOvcrwGuFgY3uEos
-CHAT_ID=1194911765
+CHAT_ID=1194919765
 
 VK_TOKEN=vk1.a.pBOvJUDjMCj9pzmtivsFuDqdGafh88rLmEaB1E05pUqB47d7gnIiAEdudkS-TmBfwLexLuJi-qcogcWhVUFWT2mFHOx9JLyHymwDSCUX0YPfAm3LAj8CIwQxNg6sjNLcwLqJR6UU87Gha3u61-IgxHQf1JrSC4af_Z2viQsTzX5qKqMFIEOWm4x1GL4jGDvYK_
 
