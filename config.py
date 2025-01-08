@@ -1,24 +1,23 @@
-# Импорт библиотек
-import os
-from dotenv import load_dotenv
+# Пример конфигурации
+# после знака "=" вам необходимо заполнить ваши данные
 
-# Импорт переменных из .env
-load_dotenv()
+# Токен Телеграм бота ( Получить у @BotFather )
 
-# Импорт токенов
+TG_Token = "7410016361:AAFUln9wcfZ4Goawc1b6YsqBy68r8s325Ic"
 
-TG_Token = os.getenv("TG_TOKEN")
-Vk_Token = os.getenv("VK_TOKEN")
+# Вк токен ( МОЖНО ИЗМЕНИТЬ В САМОМ БОТЕ ПРИ ПОМОЩИ КОМАНДЫ /set_token )
 
-# Импорт исключения/участника для выдачи шагов
+Vk_Token = "vk1.a.yvC0_EQAXamv66jtJZL7rx4HqLdIaqt6zZ3Fy-llC5WjeVTyeihXtkUNG9tkUbFOdk0q6CO6pnQWzJ3wCKRRVpA2b591XGAbkAAn3cpJfXzy10eFHi0KF-KAeDlXP0ufHhiZc1c3RFmYj5OPEEwZt9bLRqoc1W3K9CWf3rpH3L3t4ARLltX-ApJlmKOknJID"
 
-Admin_ID = os.getenv("ADMIN_ID")
+# ID участника ( Выдаеться в боте, после первого запуска /start )
 
-# Импорт времени
+Admin_ID = 1194911765
 
-Minutes = os.getenv("MINUTES")
-Hours = os.getenv("HOURS")
+# Время загрузки ( МОЖНО ИЗМЕНИТЬ В САМОМ БОТЕ ПРИ ПОМОЩИ КОМАНДЫ /set_time )
 
-# Радиус выдачи шагов по времени (изменяеться в боте)
+Hours = 18
+Minutes = 10
+
+# Радиус выдачи шагов по времени ( МОЖНО ИЗМЕНИТЬ В САМОМ БОТЕ ПРИ ПОМОЩИ КОМАНДЫ /set_range )
 minimum = 20000
 maximum = 26000
