@@ -7,7 +7,7 @@ from colorama import Fore
 
 # Импорт функций
 
-from utilities import checks
+from utilities import checks, replace_config_value, restart_bot
 
 # Создаем роутер SetToken_router
 SetToken_router = Router()
@@ -51,10 +51,11 @@ async def vvod_tokena(message: types.Message, state: FSMContext):
     token = message.text
     try:
         # Обновляем файл .env
-        update_env(".env", "VK_TOKEN", str(token))
+        replace_config_value("Vk_token", str(token))
         # Отправляем подтверждение пользователю
         await message.answer("Токен успешно изменен")
         await state.clear()  # Сбрасываем состояние
+        restart_bot()
     except ValueError as ve:
         await message.answer(f"Ошибка: {ve}")
     except Exception as e:

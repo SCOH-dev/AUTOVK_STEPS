@@ -32,8 +32,9 @@ async def on_startup():
     await set_commandss(Bot)
     print(Fore.GREEN + "Создал команды!!!")
     job = partial(send_steps_message, Bot, Admin_ID)
-    scheduler.add_job(job, 'cron', hour=Hours, minute=Minutes)    
+    scheduler.add_job(job, 'cron', day_of_week='mon-sun', hour=Hours, minute=Minutes)    
     scheduler.start()
+    print(f"время: {Hours}:{Minutes}")
     print(Fore.GREEN + "Запущен планировщик задач.")
 
 # Запуск бота
